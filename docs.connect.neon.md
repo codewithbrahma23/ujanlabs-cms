@@ -364,3 +364,8 @@ https://cms.ujanlabs.com
 │
 ▼
 Neon + Blob-backed Payload data
+
+DATABASE_URL="YOUR_NEON_CONNECTION_STRING" pnpm payload migrate
+postgresql://neondb_owner:npg_KETyZ4InGxF1@ep-fragrant-lab-azdeuz71-pooler.c-3.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
+
+DATABASE_URL="postgresql://neondb_owner:npg_KETyZ4InGxF1@ep-fragrant-lab-azdeuz71-pooler.c-3.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require" pnpm payload migrate
