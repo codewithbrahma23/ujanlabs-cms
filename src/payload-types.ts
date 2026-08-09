@@ -1693,6 +1693,7 @@ export interface Homepage {
     logo?: (number | null) | Media;
     backgroundImage?: (number | null) | Media;
     title: string;
+    headline: string;
     subtitle?: string | null;
     primaryButtonText?: string | null;
     secondaryButtonText?: string | null;
@@ -1767,6 +1768,7 @@ export interface HomepageSelect<T extends boolean = true> {
         logo?: T;
         backgroundImage?: T;
         title?: T;
+        headline?: T;
         subtitle?: T;
         primaryButtonText?: T;
         secondaryButtonText?: T;

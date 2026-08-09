@@ -48,6 +48,13 @@ http://localhost:3001/api/globals/homepage
           required: true,
         },
         {
+          name: 'headline',
+          label: 'Main Hero Headline',
+          type: 'text',
+          required: true,
+          defaultValue: 'We build modern software that scales with you.',
+        },
+        {
           name: 'subtitle',
           type: 'textarea',
         },
