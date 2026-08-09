@@ -1,0 +1,212 @@
+// /* =========================================================
+//    UJAN LABS - PAYLOAD LOGIN PAGE
+//    ========================================================= */
+
+// /*
+//  * Payload's login view.
+//  * We keep Payload's actual form/functionality untouched
+//  * and only change the surrounding visual presentation.
+//  */
+// .template-minimal {
+//   position: relative;
+//   min-height: 100vh;
+//   overflow: hidden;
+
+//   /*
+//    * Same soft mesh treatment used on the CMS landing page.
+//    */
+//   background:
+//     radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.12), transparent 28%),
+//     radial-gradient(circle at 80% 30%, rgba(6, 182, 212, 0.1), transparent 30%),
+//     radial-gradient(circle at 50% 80%, rgba(99, 102, 241, 0.08), transparent 32%), var(--theme-bg);
+// }
+
+// /* ---------------------------------------------------------
+//    Technical grid
+//    --------------------------------------------------------- */
+
+// .template-minimal::before {
+//   content: '';
+//   position: fixed;
+//   inset: 0;
+
+//   pointer-events: none;
+
+//   background-image:
+//     linear-gradient(to right, rgba(100, 116, 139, 0.1) 1px, transparent 1px),
+//     linear-gradient(to bottom, rgba(100, 116, 139, 0.1) 1px, transparent 1px);
+
+//   background-size: 48px 48px;
+
+//   z-index: 0;
+// }
+
+// /* ---------------------------------------------------------
+//    Bottom glowing blue/cyan area
+//    --------------------------------------------------------- */
+
+// .template-minimal::after {
+//   content: '';
+//   position: fixed;
+
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+
+//   height: 320px;
+
+//   pointer-events: none;
+
+//   /*
+//    * Multiple gradients create the glowing vector-like
+//    * bottom treatment without affecting the login form.
+//    */
+//   background:
+
+//     /* blue glowing line */
+//     radial-gradient(ellipse 65% 3px at 32% 72%, rgba(59, 130, 246, 0.75), transparent 70%),
+//     /* cyan glowing line */
+//     radial-gradient(ellipse 60% 2px at 68% 82%, rgba(34, 211, 238, 0.6), transparent 70%),
+//     /* indigo line */
+//     radial-gradient(ellipse 50% 2px at 48% 92%, rgba(129, 140, 248, 0.45), transparent 70%),
+//     /* large ambient blue glow */
+//     radial-gradient(ellipse 55% 45% at 50% 115%, rgba(37, 99, 235, 0.22), transparent 70%),
+//     /* cyan ambient glow */
+//     radial-gradient(ellipse 35% 35% at 72% 110%, rgba(6, 182, 212, 0.14), transparent 70%);
+
+//   z-index: 0;
+// }
+
+// /*
+//  * Keep Payload's login content above our background.
+//  */
+// .template-minimal > * {
+//   position: relative;
+//   z-index: 2;
+// }
+
+// /* =========================================================
+//    DARK MODE
+//    ========================================================= */
+
+// [data-theme='dark'] .template-minimal {
+//   background:
+//     radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.16), transparent 28%),
+//     radial-gradient(circle at 80% 30%, rgba(6, 182, 212, 0.12), transparent 30%),
+//     radial-gradient(circle at 50% 80%, rgba(99, 102, 241, 0.1), transparent 32%), #020617;
+// }
+
+// [data-theme='dark'] .template-minimal::before {
+//   opacity: 0.45;
+// }
+
+// [data-theme='dark'] .template-minimal::after {
+//   height: 360px;
+
+//   background:
+
+//     /* bright blue glowing line */
+//     radial-gradient(ellipse 70% 4px at 30% 70%, rgba(96, 165, 250, 0.95), transparent 70%),
+//     /* cyan glowing line */
+//     radial-gradient(ellipse 65% 3px at 72% 82%, rgba(34, 211, 238, 0.85), transparent 70%),
+//     /* indigo glowing line */
+//     radial-gradient(ellipse 55% 3px at 50% 92%, rgba(129, 140, 248, 0.7), transparent 70%),
+//     /* strong blue atmospheric glow */
+//     radial-gradient(ellipse 60% 55% at 50% 118%, rgba(37, 99, 235, 0.35), transparent 70%),
+//     /* cyan atmospheric glow */
+//     radial-gradient(ellipse 40% 45% at 72% 115%, rgba(6, 182, 212, 0.22), transparent 70%);
+
+//   filter: drop-shadow(0 0 14px rgba(59, 130, 246, 0.35));
+// }
+
+/* Hide Payload's built-in logo */
+// .graphic-logo {
+//   display: none;
+// }
+
+// .ujan-login-background {
+//   position: fixed;
+//   inset: 0;
+//   pointer-events: none;
+//   z-index: 0;
+// }
+
+// .ujan-login-vectors {
+//   position: absolute;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   height: 300px;
+// }
+
+/* Hide Payload's built-in logo */
+.graphic-logo {
+  display: none;
+}
+
+/* Full-screen decorative layer behind the login form */
+.ujan-login-background {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Keep Payload login UI above the decorative layer */
+.template-minimal > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Blue ambient glow */
+.ujan-login-blue-glow {
+  position: absolute;
+  bottom: -100px;
+  left: 50%;
+  width: 80%;
+  height: 260px;
+
+  transform: translateX(-50%);
+
+  border-radius: 9999px;
+
+  background: rgba(59, 130, 246, 0);
+  filter: blur(100px);
+}
+
+/* Cyan ambient glow */
+.ujan-login-cyan-glow {
+  position: absolute;
+  bottom: -120px;
+  left: 65%;
+  width: 45%;
+  height: 220px;
+
+  transform: translateX(-50%);
+
+  border-radius: 9999px;
+
+  background: rgba(34, 211, 238, 0);
+  filter: blur(110px);
+}
+
+/* Bottom vector area */
+.ujan-login-vectors {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 300px;
+}
+
+/* Dark mode ambient glows */
+[data-theme='dark'] .ujan-login-blue-glow {
+  background: rgba(59, 130, 246, 0.2);
+}
+
+[data-theme='dark'] .ujan-login-cyan-glow {
+  background: rgba(34, 211, 238, 0.15);
+}
