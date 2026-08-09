@@ -52,7 +52,7 @@ http://localhost:3001/api/globals/homepage
           label: 'Main Hero Headline',
           type: 'text',
           required: true,
-          defaultValue: 'We build modern software that scales with you.',
+          defaultValue: 'We build modern software for your business.',
         },
         {
           name: 'subtitle',
